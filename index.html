@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Era Entertainment — Подбор программы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-radius: 28px;
+            padding: 48px 40px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow:
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .logo h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .logo p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .progress-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .progress-step {
+            flex: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .progress-step.completed {
+            background: #667eea;
+        }
+
+        .question-container {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .question-number {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .question-text {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(102, 126, 234, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .option.selected {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            border-color: #667eea;
+        }
+
+        .option-icon {
+            font-size: 24px;
+            margin-right: 14px;
+        }
+
+        .option-text {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .option input {
+            display: none;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-back {
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+
+        .btn-next:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result-container {
+            display: none;
+            text-align: center;
+        }
+
+        .result-container.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .result-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .result-title {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .result-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .programs-list {
+            margin-top: 28px;
+            text-align: left;
+        }
+
+        .program-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .program-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .program-name {
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .program-details {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .program-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .program-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .program-links a:hover {
+            text-decoration: underline;
+        }
+
+        .uid-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>Era Entertainment</h1>
+            <p>Подберём идеальную программу для тебя</p>
+        </div>
+
+        <div class="uid-badge" id="uidBadge">
+            UID: загрузка...
+        </div>
+
+        <div class="progress-bar" id="progressBar">
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+
+        <!-- Вопрос 1: Настроение -->
+        <div class="question-container active" data-question="1">
+            <div class="question-number">Вопрос 1 из 5</div>
+            <div class="question-text">Какое у тебя сейчас настроение?</div>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="mood" value="active">
+                    <span class="option-icon">⚡</span>
+                    <span class="option-text">Активное — хочу двигаться!</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="mood" value="relaxed">
+                    <span class="option-icon">🧘</span>
+                    <span class="option-text">Расслабленное — хочу отдохнуть</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Вопрос 2: Бюджет -->
+        <div class="question-container" data-question="2">
+            <div class="question-number">Вопрос 2 из 5</div>
+            <div class="question-text">Какой у тебя бюджет на развлечения?</div>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="budget" value="low">
+                    <span class="option-icon">🪙</span>
+                    <span class="option-text">До 5 000 ₸</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="budget" value="medium">
+                    <span class="option-icon">💵</span>
+                    <span class="option-text">5 000 — 15 000 ₸</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="budget" value="high">
+                    <span class="option-icon">💎</span>
+                    <span class="option-text">От 15 000 ₸</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Вопрос 3: Компания -->
+        <div class="question-container" data-question="3">
+            <div class="question-number">Вопрос 3 из 5</div>
+            <div class="question-text">С кем планируешь отдых?</div>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="company" value="alone">
+                    <span class="option-icon">🧑</span>
+                    <span class="option-text">Один/одна</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="company" value="couple">
+                    <span class="option-icon">💑</span>
+                    <span class="option-text">Вдвоём (пара)</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="company" value="friends">
+                    <span class="option-icon">👥</span>
+                    <span class="option-text">С друзьями / компанией</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Вопрос 4: Время -->
+        <div class="question-container" data-question="4">
+            <div class="question-number">Вопрос 4 из 5</div>
+            <div class="question-text">В какое время планируешь развлечение?</div>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="time" value="morning">
+                    <span class="option-icon">🌅</span>
+                    <span class="option-text">Утро</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="time" value="day">
+                    <span class="option-icon">☀️</span>
+                    <span class="option-text">День</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="time" value="evening">
+                    <span class="option-icon">🌆</span>
+                    <span class="option-text">Вечер</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="time" value="night">
+                    <span class="option-icon">🌙</span>
+                    <span class="option-text">Ночь</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Вопрос 5: Локация -->
+        <div class="question-container" data-question="5">
+            <div class="question-number">Вопрос 5 из 5</div>
+            <div class="question-text">Где предпочитаешь провести время?</div>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="location" value="indoor">
+                    <span class="option-icon">🏠</span>
+                    <span class="option-text">В помещении</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="location" value="outdoor">
+                    <span class="option-icon">🌳</span>
+                    <span class="option-text">На улице / природе</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Результат -->
+        <div class="result-container" id="resultContainer">
+            <div class="result-icon">🎉</div>
+            <div class="result-title">Готово!</div>
+            <div class="result-subtitle">Мы подобрали для тебя идеальные программы развлечений</div>
+            <div class="programs-list" id="programsList"></div>
+        </div>
+
+        <div class="btn-container" id="btnContainer">
+            <button class="btn btn-back" id="btnBack" style="display: none;">Назад</button>
+            <button class="btn btn-next" id="btnNext" disabled>Далее</button>
+        </div>
+
+        <div class="error-message" id="errorMessage" style="display: none;"></div>
+    </div>
+
+    <script>
+        // Конфигурация
+        const TOTAL_QUESTIONS = 5;
+        let currentQuestion = 1;
+        const answers = {};
+
+        // Получаем UID из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const uid = urlParams.get('uid') || 'test_user';
+
+        // Отображаем UID
+        const uidBadge = document.getElementById('uidBadge');
+        uidBadge.textContent = `UID: ${uid}`;
+
+        // DOM элементы
+        const progressSteps = document.querySelectorAll('.progress-step');
+        const questionContainers = document.querySelectorAll('.question-container');
+        const btnNext = document.getElementById('btnNext');
+        const btnBack = document.getElementById('btnBack');
+        const btnContainer = document.getElementById('btnContainer');
+        const resultContainer = document.getElementById('resultContainer');
+        const programsList = document.getElementById('programsList');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Обработчик выбора опции
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function () {
+                const input = this.querySelector('input');
+                const name = input.name;
+                const value = input.value;
+
+                // Снимаем выделение с других опций
+                this.closest('.options').querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+
+                // Выделяем текущую
+                this.classList.add('selected');
+                input.checked = true;
+
+                // Сохраняем ответ
+                answers[name] = value;
+
+                // Активируем кнопку
+                btnNext.disabled = false;
+            });
+        });
+
+        // Обновление прогресс-бара
+        function updateProgress() {
+            progressSteps.forEach((step, index) => {
+                step.classList.remove('active', 'completed');
+                if (index < currentQuestion - 1) {
+                    step.classList.add('completed');
+                } else if (index === currentQuestion - 1) {
+                    step.classList.add('active');
+                }
+            });
+        }
+
+        // Показать вопрос
+        function showQuestion(num) {
+            questionContainers.forEach(container => {
+                container.classList.remove('active');
+                if (parseInt(container.dataset.question) === num) {
+                    container.classList.add('active');
+                }
+            });
+
+            // Показать/скрыть кнопку "Назад"
+            btnBack.style.display = num > 1 ? 'block' : 'none';
+
+            // Изменить текст на последнем вопросе
+            btnNext.textContent = num === TOTAL_QUESTIONS ? 'Получить результат' : 'Далее';
+
+            // Проверить, есть ли уже ответ на этот вопрос
+            const currentContainer = document.querySelector(`.question-container[data-question="${num}"]`);
+            const selectedOption = currentContainer.querySelector('.option.selected');
+            btnNext.disabled = !selectedOption;
+
+            updateProgress();
+        }
+
+        // Кнопка "Далее"
+        btnNext.addEventListener('click', async function () {
+            if (currentQuestion < TOTAL_QUESTIONS) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                // Отправляем результаты
+                await submitQuiz();
+            }
+        });
+
+        // Кнопка "Назад"
+        btnBack.addEventListener('click', function () {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        });
+
+        // Отправка квиза
+        async function submitQuiz() {
+            btnNext.disabled = true;
+            btnNext.innerHTML = '<span class="loading"></span>';
+            errorMessage.style.display = 'none';
+
+            const data = {
+                uid: uid,
+                mood: answers.mood,
+                budget: answers.budget,
+                company: answers.company,
+                time: answers.time,
+                location: answers.location
+            };
+
+            try {
+                const response = await fetch('/webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success' && result.programs) {
+                    showResults(result.programs);
+                } else {
+                    throw new Error(result.message || 'Неизвестная ошибка');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                errorMessage.textContent = '❌ Ошибка: ' + error.message;
+                errorMessage.style.display = 'block';
+                btnNext.disabled = false;
+                btnNext.textContent = 'Попробовать снова';
+            }
+        }
+
+        // Показать результаты
+        function showResults(programs) {
+            questionContainers.forEach(c => c.classList.remove('active'));
+            btnContainer.style.display = 'none';
+            document.getElementById('progressBar').style.display = 'none';
+            resultContainer.classList.add('active');
+
+            programsList.innerHTML = '';
+            programs.forEach((program, index) => {
+                const card = document.createElement('div');
+                card.className = 'program-card';
+                card.innerHTML = `
+                    <div class="program-name">${index + 1}. ${program.name}</div>
+                    <div class="program-details">${program.details}</div>
+                    <div class="program-links">
+                        <a href="${program.video_url}" target="_blank">🎬 Видео</a>
+                        <a href="${program.photo_url}" target="_blank">🛒 Заказать</a>
+                    </div>
+                `;
+                programsList.appendChild(card);
+            });
+        }
+
+        // Инициализация
+        updateProgress();
+    </script>
+</body>
+
+</html>
