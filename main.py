@@ -21,8 +21,8 @@ from aiogram.enums import ParseMode
 from recommendation import recommend, load_programs
 
 # ===================== КОНФИГУРАЦИЯ =====================
-BOT_TOKEN = os.getenv("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")  # Замени на свой токен
-SITE_URL = os.getenv("SITE_URL", "http://localhost:8000")   # URL сайта (или Vercel)
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8489331202:AAEenH-FNTxmothImM-KC0oMf9ZAxy4ybuU")  # Замени на свой токен
+SITE_URL = os.getenv("SITE_URL", "https://era-front-san-back.vercel.app")   # URL сайта (или Vercel)
 
 # ===================== МОДЕЛИ ДАННЫХ =====================
 class QuizAnswers(BaseModel):
