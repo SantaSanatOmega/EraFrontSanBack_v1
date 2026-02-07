@@ -347,6 +347,8 @@
     <div class="container">
         <!-- User Profile -->
         <div class="user-profile">
+            <img id="userAvatar" class="user-avatar"
+                style="display: none; width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" />
             <div id="userAvatarPlaceholder" class="user-avatar-placeholder">?</div>
             <div>
                 <div class="user-name" id="userName">Loading...</div>
@@ -410,6 +412,21 @@
             const user = tg.initDataUnsafe.user;
             uid = String(user.id);
             userName = user.first_name + (user.last_name ? ' ' + user.last_name : '');
+
+            // Попытка загрузить фото пользователя
+            if (user.photo_url) {
+                const avatarImg = document.getElementById('userAvatar');
+                const avatarPlaceholder = document.getElementById('userAvatarPlaceholder');
+                avatarImg.src = user.photo_url;
+                avatarImg.onload = function () {
+                    avatarImg.style.display = 'block';
+                    avatarPlaceholder.style.display = 'none';
+                };
+                avatarImg.onerror = function () {
+                    avatarImg.style.display = 'none';
+                    avatarPlaceholder.style.display = 'flex';
+                };
+            }
         } else {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('uid')) uid = urlParams.get('uid');
