@@ -17,6 +17,7 @@ from aiogram import Bot, Dispatcher, Router
 from aiogram.types import Message, FSInputFile, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 from aiogram.filters import CommandStart
 from aiogram.enums import ParseMode
+from aiogram.client.default import DefaultBotProperties
 
 from recommendation import recommend, load_programs
 
@@ -50,7 +51,7 @@ class TildaWebhookData(BaseModel):
     answers: Dict[str, Any]
 
 # ===================== AIOGRAM BOT =====================
-bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
+bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 router = Router()
 
