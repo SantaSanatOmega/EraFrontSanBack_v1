@@ -1,0 +1,445 @@
+{
+    "stages": {
+        "stage1": {
+            "question": "What are you up for?",
+            "options": [
+                {
+                    "id": "solo",
+                    "text": "Just Me",
+                    "icon": "🧑",
+                    "nextStage": "solo_stage2"
+                },
+                {
+                    "id": "date",
+                    "text": "Date Night",
+                    "icon": "💑",
+                    "nextStage": "date_stage2"
+                },
+                {
+                    "id": "friends",
+                    "text": "Friends & Co",
+                    "icon": "👥",
+                    "nextStage": "friends_stage2"
+                },
+                {
+                    "id": "family",
+                    "text": "Family & Kids",
+                    "icon": "👨‍👩‍👧‍👦",
+                    "nextStage": "family_stage2"
+                }
+            ]
+        },
+        "solo_stage2": {
+            "question": "What's the vibe today?",
+            "options": [
+                {
+                    "id": "reset",
+                    "text": "Need a Reset",
+                    "icon": "🧘",
+                    "tags": [
+                        "BodyRecovery",
+                        "Mind",
+                        "Soul"
+                    ]
+                },
+                {
+                    "id": "action",
+                    "text": "Craving Action",
+                    "icon": "⚡",
+                    "tags": [
+                        "Thrill",
+                        "Risk",
+                        "Party"
+                    ]
+                },
+                {
+                    "id": "treat",
+                    "text": "Treat Myself",
+                    "icon": "✨",
+                    "tags": [
+                        "Ego",
+                        "BodyCare",
+                        "Food"
+                    ]
+                },
+                {
+                    "id": "new",
+                    "text": "Feel something new",
+                    "icon": "🌟",
+                    "tags": [
+                        "Nature",
+                        "Art",
+                        "Future"
+                    ]
+                }
+            ]
+        },
+        "date_stage2": {
+            "question": "Set the Mood",
+            "options": [
+                {
+                    "id": "romantic",
+                    "text": "Romantic",
+                    "icon": "🕯️",
+                    "tags": [
+                        "CandlelitDinner",
+                        "View",
+                        "SecludedSpot"
+                    ]
+                },
+                {
+                    "id": "stunning",
+                    "text": "Stunning",
+                    "icon": "🌠",
+                    "tags": [
+                        "WeParticipate",
+                        "WeWatch",
+                        "WeExplore"
+                    ]
+                },
+                {
+                    "id": "vibrant",
+                    "text": "Vibrant",
+                    "icon": "🎉",
+                    "tags": [
+                        "FunGames",
+                        "SportThrill",
+                        "Extreme"
+                    ]
+                },
+                {
+                    "id": "chill",
+                    "text": "Chill",
+                    "icon": "🍷",
+                    "tags": [
+                        "Mind",
+                        "Soul",
+                        "Body"
+                    ]
+                }
+            ]
+        },
+        "friends_stage2": {
+            "question": "What's the agenda?",
+            "options": [
+                {
+                    "id": "chat",
+                    "text": "Chill & Chat",
+                    "icon": "☕",
+                    "tags": [
+                        "Speakeasy",
+                        "ShishaLounge",
+                        "Rooftop"
+                    ]
+                },
+                {
+                    "id": "wild",
+                    "text": "Go Wild",
+                    "icon": "🔥",
+                    "tags": [
+                        "SuperClub",
+                        "PartyBar",
+                        "BeachParty"
+                    ]
+                },
+                {
+                    "id": "compete",
+                    "text": "Compete & Play",
+                    "icon": "🎯",
+                    "tags": [
+                        "Active",
+                        "Mental",
+                        "Skill"
+                    ]
+                },
+                {
+                    "id": "impress",
+                    "text": "Impress Guests",
+                    "icon": "🎪",
+                    "tags": [
+                        "Parks",
+                        "Symbols",
+                        "LocalFlavor"
+                    ]
+                }
+            ]
+        },
+        "family_stage2": {
+            "question": "What's the plan?",
+            "options": [
+                {
+                    "id": "energy",
+                    "text": "Burn Energy",
+                    "icon": "🎢",
+                    "tags": [
+                        "ThemeParks",
+                        "ActionCenters",
+                        "AdventureParks"
+                    ]
+                },
+                {
+                    "id": "curiosity",
+                    "text": "Spark Curiosity",
+                    "icon": "🔬",
+                    "tags": [
+                        "NatureAnimals",
+                        "VisualWorlds",
+                        "ScienceFuture"
+                    ]
+                },
+                {
+                    "id": "nature",
+                    "text": "Connect with Nature",
+                    "icon": "🌳",
+                    "tags": [
+                        "Greenery",
+                        "Sea",
+                        "Wildlife"
+                    ]
+                },
+                {
+                    "id": "heat",
+                    "text": "Beat the Heat",
+                    "icon": "💦",
+                    "tags": [
+                        "WaterParks",
+                        "SwimmingRelax",
+                        "IceSkating"
+                    ]
+                }
+            ]
+        }
+    },
+    "tagDetails": {
+        "BodyRecovery": {
+            "name": "Body Recovery",
+            "icon": "💆",
+            "description": "Spa, massage, thermal baths"
+        },
+        "Mind": {
+            "name": "Mind",
+            "icon": "🧠",
+            "description": "Meditation, yoga, peace"
+        },
+        "Soul": {
+            "name": "Soul",
+            "icon": "🌸",
+            "description": "Art therapy, nature, solitude"
+        },
+        "Thrill": {
+            "name": "Thrill",
+            "icon": "🎰",
+            "description": "Casino, poker, betting"
+        },
+        "Risk": {
+            "name": "Risk",
+            "icon": "🪂",
+            "description": "Skydiving, extreme, adrenaline"
+        },
+        "Party": {
+            "name": "Party",
+            "icon": "🎤",
+            "description": "Clubs, karaoke, parties"
+        },
+        "Ego": {
+            "name": "Treat Yourself",
+            "icon": "👑",
+            "description": "Shopping, style, grooming"
+        },
+        "BodyCare": {
+            "name": "Body Care",
+            "icon": "🛁",
+            "description": "Spa, hammam, beauty"
+        },
+        "Food": {
+            "name": "Gastro",
+            "icon": "🍽️",
+            "description": "Fine dining, tastings, chefs"
+        },
+        "Nature": {
+            "name": "Nature",
+            "icon": "🏔️",
+            "description": "Mountains, parks, hiking"
+        },
+        "Art": {
+            "name": "Art",
+            "icon": "🎨",
+            "description": "Galleries, exhibitions, museums"
+        },
+        "Future": {
+            "name": "Future",
+            "icon": "🚀",
+            "description": "Tech, VR, innovations"
+        },
+        "CandlelitDinner": {
+            "name": "Candlelit Dinner",
+            "icon": "🕯️",
+            "description": "Romantic restaurants"
+        },
+        "View": {
+            "name": "Beautiful View",
+            "icon": "🌃",
+            "description": "Rooftops, panoramas"
+        },
+        "SecludedSpot": {
+            "name": "Secluded Spot",
+            "icon": "🏝️",
+            "description": "Private locations"
+        },
+        "WeParticipate": {
+            "name": "We Participate",
+            "icon": "🎭",
+            "description": "Workshops, quests"
+        },
+        "WeWatch": {
+            "name": "We Watch",
+            "icon": "🎬",
+            "description": "Shows, concerts, theater"
+        },
+        "WeExplore": {
+            "name": "We Explore",
+            "icon": "🗺️",
+            "description": "Tours, excursions"
+        },
+        "FunGames": {
+            "name": "Fun & Games",
+            "icon": "🎮",
+            "description": "Game clubs, entertainment"
+        },
+        "SportThrill": {
+            "name": "Sport Thrill",
+            "icon": "⚽",
+            "description": "Bowling, billiards, darts"
+        },
+        "Extreme": {
+            "name": "Extreme",
+            "icon": "🏎️",
+            "description": "Karting, racing, flying"
+        },
+        "Body": {
+            "name": "Body",
+            "icon": "🧖",
+            "description": "Massage, relax"
+        },
+        "Speakeasy": {
+            "name": "Speakeasy Bars",
+            "icon": "🍸",
+            "description": "Secret bars, cocktails"
+        },
+        "ShishaLounge": {
+            "name": "Shisha Lounge",
+            "icon": "💨",
+            "description": "Hookah lounges"
+        },
+        "Rooftop": {
+            "name": "Rooftops",
+            "icon": "🌆",
+            "description": "Rooftop bars"
+        },
+        "SuperClub": {
+            "name": "Super Clubs",
+            "icon": "🪩",
+            "description": "Top clubs in the city"
+        },
+        "PartyBar": {
+            "name": "Party Bars",
+            "icon": "🍻",
+            "description": "Dancing, cocktails"
+        },
+        "BeachParty": {
+            "name": "Beach Party",
+            "icon": "🏖️",
+            "description": "Beach parties"
+        },
+        "Active": {
+            "name": "Active Games",
+            "icon": "🏃",
+            "description": "Laser tag, paintball"
+        },
+        "Mental": {
+            "name": "Mental",
+            "icon": "🧩",
+            "description": "Quizzes, board games"
+        },
+        "Skill": {
+            "name": "Skill",
+            "icon": "🎯",
+            "description": "Bowling, billiards, darts"
+        },
+        "Parks": {
+            "name": "Amusement Parks",
+            "icon": "🎡",
+            "description": "Rides, carousels"
+        },
+        "Symbols": {
+            "name": "City Symbols",
+            "icon": "🏛️",
+            "description": "Landmarks"
+        },
+        "LocalFlavor": {
+            "name": "Local Flavor",
+            "icon": "🎪",
+            "description": "Markets, bazaars, districts"
+        },
+        "ThemeParks": {
+            "name": "Theme Parks",
+            "icon": "🎢",
+            "description": "Big amusement parks"
+        },
+        "ActionCenters": {
+            "name": "Action Centers",
+            "icon": "🤸",
+            "description": "Trampolines, climbing"
+        },
+        "AdventureParks": {
+            "name": "Adventure Parks",
+            "icon": "🧗",
+            "description": "Rope courses"
+        },
+        "NatureAnimals": {
+            "name": "Nature & Animals",
+            "icon": "🦁",
+            "description": "Zoos, farms"
+        },
+        "VisualWorlds": {
+            "name": "Visual Worlds",
+            "icon": "🖼️",
+            "description": "Illusion museums, exhibits"
+        },
+        "ScienceFuture": {
+            "name": "Science & Future",
+            "icon": "🔭",
+            "description": "Planetariums, science museums"
+        },
+        "Greenery": {
+            "name": "Greenery",
+            "icon": "🌲",
+            "description": "Parks, botanical gardens"
+        },
+        "Sea": {
+            "name": "Sea",
+            "icon": "🌊",
+            "description": "Beaches, waterfronts"
+        },
+        "Wildlife": {
+            "name": "Wildlife",
+            "icon": "🦅",
+            "description": "Reserves, hiking"
+        },
+        "WaterParks": {
+            "name": "Water Parks",
+            "icon": "🌊",
+            "description": "Water slides, pools"
+        },
+        "SwimmingRelax": {
+            "name": "Swimming & Relax",
+            "icon": "🏊",
+            "description": "Pools, thermal baths"
+        },
+        "IceSkating": {
+            "name": "Ice & Skating",
+            "icon": "⛸️",
+            "description": "Ice rinks, arenas"
+        }
+    }
+}

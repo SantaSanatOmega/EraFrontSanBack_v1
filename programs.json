@@ -1,893 +1,422 @@
-{
-    "programs": [
-        {
-            "id": 1,
-            "name": "Вечер с пикболом",
-            "details": "Выбери свой вечер с пикболом. Мы поможем организовать идеальный отдых: от подбора площадки до конца мероприятия. После активных игр тебя ждёт здоровое питание, чтобы восстановить силы.",
-            "video_url": "https://myskills.kz/cdn/video_1.mp4",
-            "photo_url": "https://boo-energy.life/buy/1",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "спорт",
-                "компания",
-                "средний_бюджет",
-                "вечер",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Релакс-вечер в спа",
-            "details": "Погрузись в атмосферу полного расслабления. Массаж, сауна, ароматерапия — всё для восстановления сил после рабочей недели.",
-            "video_url": "https://myskills.kz/cdn/video_2.mp4",
-            "photo_url": "https://boo-energy.life/buy/2",
-            "visible": true,
-            "category": "relax",
-            "tags": [
-                "расслабленный",
-                "спа",
-                "один",
-                "пара",
-                "высокий_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 3,
-            "name": "Бюджетный кино-вечер",
-            "details": "Уютный вечер с попкорном и лучшими фильмами. Идеально для тех, кто хочет отдохнуть без лишних затрат.",
-            "video_url": "https://myskills.kz/cdn/video_3.mp4",
-            "photo_url": "https://boo-energy.life/buy/3",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "расслабленный",
-                "кино",
-                "один",
-                "пара",
-                "компания",
-                "низкий_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 4,
-            "name": "Экстрим-картинг",
-            "details": "Адреналин на максимум! Гонки на картах, соревнования с друзьями, победные эмоции. Почувствуй себя пилотом!",
-            "video_url": "https://myskills.kz/cdn/video_4.mp4",
-            "photo_url": "https://boo-energy.life/buy/4",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "экстрим",
-                "компания",
-                "высокий_бюджет",
-                "день",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 5,
-            "name": "Прогулка по городу",
-            "details": "Открой свой город заново! Интересные локации, уличная еда и отличное настроение гарантированы.",
-            "video_url": "https://myskills.kz/cdn/video_5.mp4",
-            "photo_url": "https://boo-energy.life/buy/5",
-            "visible": true,
-            "category": "outdoor",
-            "tags": [
-                "активный",
-                "прогулка",
-                "один",
-                "пара",
-                "низкий_бюджет",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 6,
-            "name": "Мастер-класс по керамике",
-            "details": "Создай свою уникальную вазу или чашку. Расслабляющий процесс лепки из глины под руководством мастера.",
-            "video_url": "https://myskills.kz/cdn/video_6.mp4",
-            "photo_url": "https://boo-energy.life/buy/6",
-            "visible": true,
-            "category": "creative",
-            "tags": [
-                "расслабленный",
-                "творчество",
-                "один",
-                "пара",
-                "средний_бюджет",
-                "день",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 7,
-            "name": "Квест-комната: Побег из тюрьмы",
-            "details": "Логические загадки, командная работа, 60 минут на побег. Проверь свою смекалку!",
-            "video_url": "https://myskills.kz/cdn/video_7.mp4",
-            "photo_url": "https://boo-energy.life/buy/7",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "активный",
-                "квест",
-                "компания",
-                "средний_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 8,
-            "name": "Йога на закате",
-            "details": "Практика йоги с видом на закат. Медитация, дыхательные техники и полное единение с природой.",
-            "video_url": "https://myskills.kz/cdn/video_8.mp4",
-            "photo_url": "https://boo-energy.life/buy/8",
-            "visible": true,
-            "category": "wellness",
-            "tags": [
-                "расслабленный",
-                "йога",
-                "один",
-                "низкий_бюджет",
-                "вечер",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 9,
-            "name": "Гастро-тур по ресторанам",
-            "details": "5 ресторанов, 5 блюд, одна незабываемая ночь. Открой для себя лучшую кухню города.",
-            "video_url": "https://myskills.kz/cdn/video_9.mp4",
-            "photo_url": "https://boo-energy.life/buy/9",
-            "visible": true,
-            "category": "food",
-            "tags": [
-                "расслабленный",
-                "еда",
-                "пара",
-                "компания",
-                "высокий_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 10,
-            "name": "Скалодром для начинающих",
-            "details": "Покори свою первую стену! Инструктор, снаряжение и драйв включены. Безопасно и весело.",
-            "video_url": "https://myskills.kz/cdn/video_10.mp4",
-            "photo_url": "https://boo-energy.life/buy/10",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "спорт",
-                "экстрим",
-                "один",
-                "компания",
-                "средний_бюджет",
-                "день",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 11,
-            "name": "Романтический ужин на крыше",
-            "details": "Эксклюзивный ужин для двоих с панорамным видом на город. Свечи, живая музыка, шампанское.",
-            "video_url": "https://myskills.kz/cdn/video_11.mp4",
-            "photo_url": "https://boo-energy.life/buy/11",
-            "visible": true,
-            "category": "food",
-            "tags": [
-                "расслабленный",
-                "романтика",
-                "пара",
-                "высокий_бюджет",
-                "вечер",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 12,
-            "name": "Пейнтбол: Командный бой",
-            "details": "Стратегия, адреналин, победа! Надень камуфляж и веди свою команду к триумфу.",
-            "video_url": "https://myskills.kz/cdn/video_12.mp4",
-            "photo_url": "https://boo-energy.life/buy/12",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "экстрим",
-                "компания",
-                "средний_бюджет",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 13,
-            "name": "Мастер-класс по коктейлям",
-            "details": "Научись делать профессиональные коктейли. От классических до авторских рецептов.",
-            "video_url": "https://myskills.kz/cdn/video_13.mp4",
-            "photo_url": "https://boo-energy.life/buy/13",
-            "visible": true,
-            "category": "creative",
-            "tags": [
-                "расслабленный",
-                "творчество",
-                "компания",
-                "средний_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 14,
-            "name": "Утренняя пробежка с группой",
-            "details": "Начни день правильно! Беговой клуб для всех уровней подготовки. Энергия и новые знакомства.",
-            "video_url": "https://myskills.kz/cdn/video_14.mp4",
-            "photo_url": "https://boo-energy.life/buy/14",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "спорт",
-                "компания",
-                "низкий_бюджет",
-                "утро",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 15,
-            "name": "Вечер настольных игр",
-            "details": "Мафия, Имаджинариум, Дженга — более 100 игр на выбор. Весёлый вечер в антикафе.",
-            "video_url": "https://myskills.kz/cdn/video_15.mp4",
-            "photo_url": "https://boo-energy.life/buy/15",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "расслабленный",
-                "игры",
-                "компания",
-                "низкий_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 16,
-            "name": "Полёт на воздушном шаре",
-            "details": "Парение над городом на восходе солнца. Незабываемые виды и фотографии на всю жизнь.",
-            "video_url": "https://myskills.kz/cdn/video_16.mp4",
-            "photo_url": "https://boo-energy.life/buy/16",
-            "visible": true,
-            "category": "outdoor",
-            "tags": [
-                "расслабленный",
-                "экстрим",
-                "романтика",
-                "пара",
-                "высокий_бюджет",
-                "утро",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 17,
-            "name": "Stand-Up вечер в клубе",
-            "details": "Лучшие комики города, море смеха и позитива. Идеальный способ разрядиться.",
-            "video_url": "https://myskills.kz/cdn/video_17.mp4",
-            "photo_url": "https://boo-energy.life/buy/17",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "расслабленный",
-                "шоу",
-                "один",
-                "пара",
-                "компания",
-                "средний_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 18,
-            "name": "Фотосессия в студии",
-            "details": "Профессиональная съёмка с визажистом и стилистом. 50 обработанных фото на память.",
-            "video_url": "https://myskills.kz/cdn/video_18.mp4",
-            "photo_url": "https://boo-energy.life/buy/18",
-            "visible": true,
-            "category": "creative",
-            "tags": [
-                "расслабленный",
-                "творчество",
-                "один",
-                "пара",
-                "средний_бюджет",
-                "день",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 19,
-            "name": "Караоке-баттл",
-            "details": "Пой любимые хиты, соревнуйся с друзьями, выигрывай призы! VIP-кабинка включена.",
-            "video_url": "https://myskills.kz/cdn/video_19.mp4",
-            "photo_url": "https://boo-energy.life/buy/19",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "активный",
-                "музыка",
-                "компания",
-                "средний_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 20,
-            "name": "Сплав на байдарках",
-            "details": "Активный отдых на воде. Живописные маршруты, пикник на берегу, единение с природой.",
-            "video_url": "https://myskills.kz/cdn/video_20.mp4",
-            "photo_url": "https://boo-energy.life/buy/20",
-            "visible": true,
-            "category": "outdoor",
-            "tags": [
-                "активный",
-                "спорт",
-                "экстрим",
-                "компания",
-                "средний_бюджет",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 21,
-            "name": "Дегустация вин",
-            "details": "Путешествие по винным регионам мира. 7 сортов вина, сырная тарелка, рассказ сомелье.",
-            "video_url": "https://myskills.kz/cdn/video_21.mp4",
-            "photo_url": "https://boo-energy.life/buy/21",
-            "visible": true,
-            "category": "food",
-            "tags": [
-                "расслабленный",
-                "еда",
-                "пара",
-                "компания",
-                "высокий_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 22,
-            "name": "Боулинг с друзьями",
-            "details": "Классический отдых с соревновательным духом. Пицца, напитки и веселье!",
-            "video_url": "https://myskills.kz/cdn/video_22.mp4",
-            "photo_url": "https://boo-energy.life/buy/22",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "активный",
-                "игры",
-                "компания",
-                "средний_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 23,
-            "name": "Конная прогулка",
-            "details": "Верховая езда по живописным тропам. Подходит для начинающих, инструктор включён.",
-            "video_url": "https://myskills.kz/cdn/video_23.mp4",
-            "photo_url": "https://boo-energy.life/buy/23",
-            "visible": true,
-            "category": "outdoor",
-            "tags": [
-                "активный",
-                "природа",
-                "пара",
-                "средний_бюджет",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 24,
-            "name": "Мастер-класс по суши",
-            "details": "Научись готовить роллы и нигири как шеф-повар. Все ингредиенты и инструменты включены.",
-            "video_url": "https://myskills.kz/cdn/video_24.mp4",
-            "photo_url": "https://boo-energy.life/buy/24",
-            "visible": true,
-            "category": "food",
-            "tags": [
-                "расслабленный",
-                "еда",
-                "творчество",
-                "пара",
-                "компания",
-                "средний_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 25,
-            "name": "Батутный парк",
-            "details": "Прыжки, трюки, поролоновые ямы — веселье для всех возрастов! Отличная кардио-тренировка.",
-            "video_url": "https://myskills.kz/cdn/video_25.mp4",
-            "photo_url": "https://boo-energy.life/buy/25",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "спорт",
-                "один",
-                "компания",
-                "низкий_бюджет",
-                "день",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 26,
-            "name": "Экскурсия по street art",
-            "details": "Открой тайные граффити и муралы города. История каждого арт-объекта от гида.",
-            "video_url": "https://myskills.kz/cdn/video_26.mp4",
-            "photo_url": "https://boo-energy.life/buy/26",
-            "visible": true,
-            "category": "creative",
-            "tags": [
-                "расслабленный",
-                "творчество",
-                "прогулка",
-                "один",
-                "пара",
-                "низкий_бюджет",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 27,
-            "name": "Лазертаг: Космическая битва",
-            "details": "Футуристическая арена, неоновые лабиринты, научно-фантастические миссии.",
-            "video_url": "https://myskills.kz/cdn/video_27.mp4",
-            "photo_url": "https://boo-energy.life/buy/27",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "активный",
-                "экстрим",
-                "компания",
-                "средний_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 28,
-            "name": "Джазовый концерт",
-            "details": "Живой джаз в камерной обстановке. Атмосфера 20-х годов, изысканные коктейли.",
-            "video_url": "https://myskills.kz/cdn/video_28.mp4",
-            "photo_url": "https://boo-energy.life/buy/28",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "расслабленный",
-                "музыка",
-                "пара",
-                "средний_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 29,
-            "name": "Пикник в парке",
-            "details": "Готовый набор для пикника: корзина с едой, плед, настольные игры. Просто приходи!",
-            "video_url": "https://myskills.kz/cdn/video_29.mp4",
-            "photo_url": "https://boo-energy.life/buy/29",
-            "visible": true,
-            "category": "outdoor",
-            "tags": [
-                "расслабленный",
-                "природа",
-                "романтика",
-                "пара",
-                "низкий_бюджет",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 30,
-            "name": "VR-квест: Зомби-апокалипсис",
-            "details": "Полное погружение в виртуальную реальность. Выживи в мире зомби с командой.",
-            "video_url": "https://myskills.kz/cdn/video_30.mp4",
-            "photo_url": "https://boo-energy.life/buy/30",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "активный",
-                "экстрим",
-                "игры",
-                "компания",
-                "высокий_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 31,
-            "name": "Мастер-класс по живописи",
-            "details": "Создай свою картину маслом за 3 часа. Никакого опыта не нужно — научим всему!",
-            "video_url": "https://myskills.kz/cdn/video_31.mp4",
-            "photo_url": "https://boo-energy.life/buy/31",
-            "visible": true,
-            "category": "creative",
-            "tags": [
-                "расслабленный",
-                "творчество",
-                "один",
-                "пара",
-                "средний_бюджет",
-                "день",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 32,
-            "name": "Велопрогулка по набережной",
-            "details": "Аренда велосипеда + маршрут по самым красивым местам. Свежий воздух и свобода.",
-            "video_url": "https://myskills.kz/cdn/video_32.mp4",
-            "photo_url": "https://boo-energy.life/buy/32",
-            "visible": true,
-            "category": "outdoor",
-            "tags": [
-                "активный",
-                "спорт",
-                "прогулка",
-                "один",
-                "пара",
-                "низкий_бюджет",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 33,
-            "name": "Аквапарк: Полный день",
-            "details": "Водные горки, волновой бассейн, джакузи. Развлечения для всей компании.",
-            "video_url": "https://myskills.kz/cdn/video_33.mp4",
-            "photo_url": "https://boo-energy.life/buy/33",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "компания",
-                "средний_бюджет",
-                "день",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 34,
-            "name": "Тихий книжный вечер",
-            "details": "Уютное кафе-библиотека. Горячий чай, тысячи книг, кресла-мешки. Отключись от мира.",
-            "video_url": "https://myskills.kz/cdn/video_34.mp4",
-            "photo_url": "https://boo-energy.life/buy/34",
-            "visible": true,
-            "category": "relax",
-            "tags": [
-                "расслабленный",
-                "один",
-                "низкий_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 35,
-            "name": "Танцевальный мастер-класс",
-            "details": "Сальса, бачата или хип-хоп — выбирай стиль! Научишься базовым движениям за 2 часа.",
-            "video_url": "https://myskills.kz/cdn/video_35.mp4",
-            "photo_url": "https://boo-energy.life/buy/35",
-            "visible": true,
-            "category": "creative",
-            "tags": [
-                "активный",
-                "творчество",
-                "музыка",
-                "пара",
-                "средний_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 36,
-            "name": "Рыбалка на озере",
-            "details": "Тишина, природа, удочка в руках. Всё снаряжение включено, улов можно приготовить на месте.",
-            "video_url": "https://myskills.kz/cdn/video_36.mp4",
-            "photo_url": "https://boo-energy.life/buy/36",
-            "visible": true,
-            "category": "outdoor",
-            "tags": [
-                "расслабленный",
-                "природа",
-                "один",
-                "компания",
-                "средний_бюджет",
-                "утро",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 37,
-            "name": "Кулинарный баттл",
-            "details": "Соревнуйся с друзьями в приготовлении блюд. Жюри оценит, победитель получит приз!",
-            "video_url": "https://myskills.kz/cdn/video_37.mp4",
-            "photo_url": "https://boo-energy.life/buy/37",
-            "visible": true,
-            "category": "food",
-            "tags": [
-                "активный",
-                "еда",
-                "творчество",
-                "компания",
-                "высокий_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 38,
-            "name": "Медитация в соляной пещере",
-            "details": "Глубокое расслабление в целебной атмосфере. Очищение дыхания и полный релакс.",
-            "video_url": "https://myskills.kz/cdn/video_38.mp4",
-            "photo_url": "https://boo-energy.life/buy/38",
-            "visible": true,
-            "category": "wellness",
-            "tags": [
-                "расслабленный",
-                "спа",
-                "один",
-                "низкий_бюджет",
-                "день",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 39,
-            "name": "Ночной киномарафон",
-            "details": "Три культовых фильма подряд в ретро-кинотеатре. Попкорн и напитки безлимит.",
-            "video_url": "https://myskills.kz/cdn/video_39.mp4",
-            "photo_url": "https://boo-energy.life/buy/39",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "расслабленный",
-                "кино",
-                "компания",
-                "средний_бюджет",
-                "ночь",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 40,
-            "name": "Полёт в аэротрубе",
-            "details": "Ощути свободное падение без прыжка из самолёта! Безопасно, ярко, незабываемо.",
-            "video_url": "https://myskills.kz/cdn/video_40.mp4",
-            "photo_url": "https://boo-energy.life/buy/40",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "экстрим",
-                "один",
-                "компания",
-                "высокий_бюджет",
-                "день",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 41,
-            "name": "Утренний бранч",
-            "details": "Изысканный завтрак с шампанским и панорамным видом. Идеальное начало выходного.",
-            "video_url": "https://myskills.kz/cdn/video_41.mp4",
-            "photo_url": "https://boo-energy.life/buy/41",
-            "visible": true,
-            "category": "food",
-            "tags": [
-                "расслабленный",
-                "еда",
-                "пара",
-                "высокий_бюджет",
-                "утро",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 42,
-            "name": "Эко-ферма на выходные",
-            "details": "День на ферме: животные, свежий воздух, домашняя еда. Перезагрузка от города.",
-            "video_url": "https://myskills.kz/cdn/video_42.mp4",
-            "photo_url": "https://boo-energy.life/buy/42",
-            "visible": true,
-            "category": "outdoor",
-            "tags": [
-                "расслабленный",
-                "природа",
-                "пара",
-                "компания",
-                "средний_бюджет",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 43,
-            "name": "Мастер-класс по фотографии",
-            "details": "Научись снимать как профи. Теория + практическая съёмка по городу.",
-            "video_url": "https://myskills.kz/cdn/video_43.mp4",
-            "photo_url": "https://boo-energy.life/buy/43",
-            "visible": true,
-            "category": "creative",
-            "tags": [
-                "расслабленный",
-                "творчество",
-                "один",
-                "средний_бюджет",
-                "день",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 44,
-            "name": "Рок-концерт в клубе",
-            "details": "Живая музыка, драйв, энергия. Лучшие местные группы на одной сцене.",
-            "video_url": "https://myskills.kz/cdn/video_44.mp4",
-            "photo_url": "https://boo-energy.life/buy/44",
-            "visible": true,
-            "category": "entertainment",
-            "tags": [
-                "активный",
-                "музыка",
-                "компания",
-                "средний_бюджет",
-                "вечер",
-                "ночь",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 45,
-            "name": "Тренировка с персональным тренером",
-            "details": "Индивидуальная программа под твои цели. Первая тренировка + план питания.",
-            "video_url": "https://myskills.kz/cdn/video_45.mp4",
-            "photo_url": "https://boo-energy.life/buy/45",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "спорт",
-                "один",
-                "средний_бюджет",
-                "утро",
-                "день",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 46,
-            "name": "Ночная экскурсия по городу",
-            "details": "Город в огнях: архитектура, легенды, тайны ночных улиц. Необычный маршрут от гида.",
-            "video_url": "https://myskills.kz/cdn/video_46.mp4",
-            "photo_url": "https://boo-energy.life/buy/46",
-            "visible": true,
-            "category": "outdoor",
-            "tags": [
-                "расслабленный",
-                "прогулка",
-                "пара",
-                "компания",
-                "низкий_бюджет",
-                "ночь",
-                "на_улице"
-            ]
-        },
-        {
-            "id": 47,
-            "name": "Мастер-класс по свечам",
-            "details": "Создай ароматические свечи своими руками. Выбери запах, цвет и форму.",
-            "video_url": "https://myskills.kz/cdn/video_47.mp4",
-            "photo_url": "https://boo-energy.life/buy/47",
-            "visible": true,
-            "category": "creative",
-            "tags": [
-                "расслабленный",
-                "творчество",
-                "один",
-                "пара",
-                "низкий_бюджет",
-                "вечер",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 48,
-            "name": "Тир: Стрельба из лука",
-            "details": "Почувствуй себя Робин Гудом! Обучение + 50 выстрелов. Соревнуйся с друзьями.",
-            "video_url": "https://myskills.kz/cdn/video_48.mp4",
-            "photo_url": "https://boo-energy.life/buy/48",
-            "visible": true,
-            "category": "sport",
-            "tags": [
-                "активный",
-                "спорт",
-                "один",
-                "компания",
-                "средний_бюджет",
-                "день",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 49,
-            "name": "Коворкинг-день",
-            "details": "Продуктивный день в стильном коворкинге. Быстрый Wi-Fi, кофе, нетворкинг.",
-            "video_url": "https://myskills.kz/cdn/video_49.mp4",
-            "photo_url": "https://boo-energy.life/buy/49",
-            "visible": true,
-            "category": "relax",
-            "tags": [
-                "расслабленный",
-                "один",
-                "низкий_бюджет",
-                "день",
-                "в_помещении"
-            ]
-        },
-        {
-            "id": 50,
-            "name": "Массаж для двоих",
-            "details": "Расслабляющий массаж в одной комнате. Ароматические масла, свечи, полный релакс.",
-            "video_url": "https://myskills.kz/cdn/video_50.mp4",
-            "photo_url": "https://boo-energy.life/buy/50",
-            "visible": true,
-            "category": "wellness",
-            "tags": [
-                "расслабленный",
-                "спа",
-                "романтика",
-                "пара",
-                "высокий_бюджет",
-                "день",
-                "вечер",
-                "в_помещении"
-            ]
-        }
-    ]
-}
+[
+    {
+        "name": "Arasan Thermal Baths",
+        "tags": [
+            "BodyRecovery",
+            "Soul",
+            "Body",
+            "SwimmingRelax"
+        ],
+        "details": "Historic thermal baths in the city center",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Balance Yoga Studio",
+        "tags": [
+            "Mind",
+            "Soul",
+            "BodyRecovery"
+        ],
+        "details": "Meditation and yoga practices",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Rahat Palace SPA",
+        "tags": [
+            "BodyCare",
+            "BodyRecovery",
+            "Body"
+        ],
+        "details": "Premium spa with massage",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Bombay Casino",
+        "tags": [
+            "Thrill",
+            "FunGames"
+        ],
+        "details": "Poker, roulette, slots",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Almaty Skydiving",
+        "tags": [
+            "Risk",
+            "Extreme"
+        ],
+        "details": "Parachute jumps",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Icon Club",
+        "tags": [
+            "Party",
+            "SuperClub"
+        ],
+        "details": "Top club in the city",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Esentai Boutique",
+        "tags": [
+            "Ego"
+        ],
+        "details": "Luxury shopping",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Selfie Restaurant",
+        "tags": [
+            "Food",
+            "CandlelitDinner"
+        ],
+        "details": "Author's cuisine",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Chop-Chop Barbershop",
+        "tags": [
+            "BodyCare",
+            "Ego"
+        ],
+        "details": "Haircut and grooming",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Charyn Canyon Tour",
+        "tags": [
+            "Nature",
+            "Wildlife"
+        ],
+        "details": "Day trip excursion",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Kasteyev Art Museum",
+        "tags": [
+            "Art",
+            "VisualWorlds"
+        ],
+        "details": "Main museum of the country",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "VR Park",
+        "tags": [
+            "Future",
+            "ScienceFuture",
+            "FunGames"
+        ],
+        "details": "Virtual reality experience",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "The Ritz-Carlton Rooftop",
+        "tags": [
+            "CandlelitDinner",
+            "View",
+            "Rooftop"
+        ],
+        "details": "Restaurant with mountain panorama",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Glamp Park",
+        "tags": [
+            "SecludedSpot",
+            "Nature"
+        ],
+        "details": "Glamping by the lake",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Ceramics Workshop",
+        "tags": [
+            "WeParticipate",
+            "Art"
+        ],
+        "details": "Create your masterpiece",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Philharmonic Concert",
+        "tags": [
+            "WeWatch"
+        ],
+        "details": "Classical music",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Downtown Walking Tour",
+        "tags": [
+            "WeExplore",
+            "Symbols"
+        ],
+        "details": "History and architecture",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "F1 Karting",
+        "tags": [
+            "Extreme",
+            "SportThrill",
+            "Active"
+        ],
+        "details": "Go-kart racing",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Mosigra Board Game Club",
+        "tags": [
+            "Mental",
+            "FunGames"
+        ],
+        "details": "Hundreds of games",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "The Library Bar",
+        "tags": [
+            "Speakeasy"
+        ],
+        "details": "Secret bar behind a bookshelf",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Marrakesh Lounge",
+        "tags": [
+            "ShishaLounge"
+        ],
+        "details": "Eastern atmosphere",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Sky Lounge",
+        "tags": [
+            "Rooftop",
+            "View"
+        ],
+        "details": "Bar on the 25th floor",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "ABR Club",
+        "tags": [
+            "SuperClub",
+            "Party"
+        ],
+        "details": "Dance till morning",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Kapchagay Beach Club",
+        "tags": [
+            "BeachParty"
+        ],
+        "details": "Beach party vibes",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Pinta Beer Bar",
+        "tags": [
+            "PartyBar"
+        ],
+        "details": "Craft beer and music",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Laser Tag Arena",
+        "tags": [
+            "Active"
+        ],
+        "details": "Team battles",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Quiz Please",
+        "tags": [
+            "Mental"
+        ],
+        "details": "Intellectual games",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Strike Bowling",
+        "tags": [
+            "Skill",
+            "SportThrill"
+        ],
+        "details": "Bowling and billiards",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Fantasy Park",
+        "tags": [
+            "Parks",
+            "ThemeParks"
+        ],
+        "details": "Amusement park",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Green Bazaar",
+        "tags": [
+            "LocalFlavor"
+        ],
+        "details": "Eastern market atmosphere",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Medeu & Shymbulak",
+        "tags": [
+            "Symbols",
+            "IceSkating"
+        ],
+        "details": "Legendary rink and resort",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Happylon",
+        "tags": [
+            "ThemeParks",
+            "ActionCenters"
+        ],
+        "details": "Largest entertainment park",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Climbat Climbing",
+        "tags": [
+            "ActionCenters",
+            "Active"
+        ],
+        "details": "Climbing for everyone",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Rope Park",
+        "tags": [
+            "AdventureParks"
+        ],
+        "details": "Rope adventure course",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Almaty Zoo",
+        "tags": [
+            "NatureAnimals"
+        ],
+        "details": "500+ animal species",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Museum of Illusions",
+        "tags": [
+            "VisualWorlds"
+        ],
+        "details": "Photos in impossible worlds",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Almaty Planetarium",
+        "tags": [
+            "ScienceFuture"
+        ],
+        "details": "Journey to the stars",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Botanical Garden",
+        "tags": [
+            "Greenery",
+            "Nature"
+        ],
+        "details": "Oasis in the city center",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Kapchagay Beach",
+        "tags": [
+            "Sea",
+            "BeachParty"
+        ],
+        "details": "Sea near the city",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Ile-Alatau National Park",
+        "tags": [
+            "Wildlife"
+        ],
+        "details": "Mountain trails and waterfalls",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Hawaii Water Park",
+        "tags": [
+            "WaterParks"
+        ],
+        "details": "Slides and pools",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Tsunami Wave Pool",
+        "tags": [
+            "SwimmingRelax"
+        ],
+        "details": "Wave pool",
+        "video_url": "#",
+        "photo_url": "#"
+    },
+    {
+        "name": "Halyk Arena Ice Rink",
+        "tags": [
+            "IceSkating"
+        ],
+        "details": "Modern ice arena",
+        "video_url": "#",
+        "photo_url": "#"
+    }
+]

@@ -14,19 +14,29 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from aiogram import Bot, Dispatcher, Router
-from aiogram.types import Message
+from aiogram.types import Message, FSInputFile, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 from aiogram.filters import CommandStart
 from aiogram.enums import ParseMode
 
 from recommendation import recommend, load_programs
 
 # ===================== КОНФИГУРАЦИЯ =====================
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8489331202:AAEenH-FNTxmothImM-KC0oMf9ZAxy4ybuU")  # Замени на свой токен
-SITE_URL = os.getenv("SITE_URL", "https://era-front-san-back.vercel.app")   # URL сайта (или Vercel)
+# Переменные окружения (настроить на хостинге)
+BOT_TOKEN = os.getenv("BOT_TOKEN")  # Токен бота из BotFather
+SITE_URL = os.getenv("SITE_URL")    # URL сайта на хостинге
+WELCOME_VIDEO_FILE_ID = None        # Кэш для ускорения отправки видео
+
+if not BOT_TOKEN:
+    raise ValueError("❌ BOT_TOKEN environment variable is required!")
+if not SITE_URL:
+    raise ValueError("❌ SITE_URL environment variable is required!")
 
 # ===================== МОДЕЛИ ДАННЫХ =====================
 class QuizAnswers(BaseModel):
     uid: str
+    selected_tag: Optional[str] = None
+    history: Optional[List[str]] = None
+    # Старые поля для обратной совместимости
     mood: Optional[str] = None
     budget: Optional[str] = None
     company: Optional[str] = None
@@ -46,15 +56,65 @@ router = Router()
 
 @router.message(CommandStart())
 async def cmd_start(message: Message):
-    """Обработчик команды /start — отправляет ссылку на квиз"""
+    """Обработчик команды /start — отправляет приветственное видео с описанием"""
     user_id = message.from_user.id
-    quiz_url = f"{SITE_URL}/quiz?uid={user_id}"
+    first_name = message.from_user.first_name or "Гость"
+    # Экранируем имя для URL
+    import urllib.parse
+    safe_name = urllib.parse.quote(first_name)
+    quiz_url = f"{SITE_URL}/quiz?uid={user_id}&name={safe_name}"
     
-    await message.answer(
-        f"👋 Привет, <b>{message.from_user.first_name}</b>!\n\n"
-        f"🎭 Пройди короткий опрос, и мы подберём для тебя идеальную программу развлечений.\n\n"
-        f"👉 <a href='{quiz_url}'>Пройти опрос</a>"
+    # Приветственный текст
+    welcome_text = (
+        "You pick the mood. NINA handles the rest.\n\n"
+        "✦ 3 curated scenarios, tailored specifically for you.\n"
+        "✦ Premium transfer picks you up and drops you off.\n"
+        "✦ One single payment for the entire service.\n\n"
+        f"Tap <a href='{quiz_url}'>Start</a> to see what I've prepared 👇"
     )
+    
+    # Путь к видео файлу
+    video_path = "assets/welcome.mp4"
+    
+    # Кнопка START с Web App
+    keyboard = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(
+                text="START",
+                web_app=WebAppInfo(url=quiz_url)
+            )]
+        ]
+    )
+    
+    global WELCOME_VIDEO_FILE_ID
+    
+    try:
+        # Если видео уже загружалось, отправляем по file_id (мгновенно)
+        if WELCOME_VIDEO_FILE_ID:
+            await message.answer_video(
+                video=WELCOME_VIDEO_FILE_ID,
+                caption=welcome_text,
+                reply_markup=keyboard
+            )
+            print(f"✅ Видео отправлено (из кэша) пользователю {user_id}")
+        else:
+            # Если первый раз — загружаем файл
+            video_file = FSInputFile(video_path)
+            sent_message = await message.answer_video(
+                video=video_file,
+                caption=welcome_text,
+                reply_markup=keyboard
+            )
+            # Сохраняем file_id для будущего использования
+            WELCOME_VIDEO_FILE_ID = sent_message.video.file_id
+            print(f"✅ Видео загружено и кэшировано (file_id: {WELCOME_VIDEO_FILE_ID})")
+            
+    except FileNotFoundError:
+        print(f"⚠️ Видео не найдено: {video_path}")
+        await message.answer(welcome_text, reply_markup=keyboard)
+    except Exception as e:
+        print(f"❌ Ошибка отправки видео: {e}")
+        await message.answer(welcome_text, reply_markup=keyboard)
 
 dp.include_router(router)
 
@@ -65,9 +125,9 @@ async def lifespan(app: FastAPI):
     # Запуск polling в фоне (только если токен настроен)
     if BOT_TOKEN != "YOUR_BOT_TOKEN_HERE":
         asyncio.create_task(dp.start_polling(bot))
-        print("🤖 Бот запущен!")
+        print(f"🤖 Бот запущен! SITE_URL: {SITE_URL}")
     else:
-        print("⚠️ BOT_TOKEN не настроен, бот не запущен")
+        print(f"⚠️ BOT_TOKEN не настроен, бот не запущен. SITE_URL: {SITE_URL}")
     yield
     if BOT_TOKEN != "YOUR_BOT_TOKEN_HERE":
         await bot.session.close()
@@ -101,48 +161,63 @@ async def serve_quiz():
     """Отдаём HTML страницу с квизом"""
     return FileResponse("index.html")
 
+@app.get("/quiz_data.json")
+async def serve_quiz_data():
+    """Отдаём данные квиза"""
+    return FileResponse("quiz_data.json")
+
+@app.get("/programs.json")
+async def serve_programs():
+    """Отдаём список программ"""
+    return FileResponse("programs.json")
+
 @app.post("/webhook")
 async def webhook(data: QuizAnswers):
     """
     Принимает данные формы и возвращает рекомендации.
-    Также отправляет результат пользователю в Telegram.
     """
     uid = data.uid
+    selected_tag = data.selected_tag
+    history = data.history or []
     
-    # Формируем словарь ответов для алгоритма
-    answers = {
-        "mood": data.mood,
-        "budget": data.budget,
-        "company": data.company,
-        "time": data.time,
-        "location": data.location,
-        "interests": data.interests or []
-    }
+    print(f"📬 ПОЛУЧЕНЫ ДАННЫЕ:")
+    print(f"   - UID: {uid}")
+    print(f"   - Тег: {selected_tag}")
+    print(f"   - История: {history}")
     
-    # Убираем None значения
-    answers = {k: v for k, v in answers.items() if v}
+    # Загружаем программы и фильтруем по тегу
+    import json
+    try:
+        with open('programs.json', 'r', encoding='utf-8') as f:
+            all_programs = json.load(f)
+        
+        if selected_tag:
+            filtered = [p for p in all_programs if selected_tag in p.get('tags', [])]
+        else:
+            filtered = all_programs[:3]
+        
+        result_programs = filtered[:5] if filtered else all_programs[:3]
+    except Exception as e:
+        print(f"❌ Ошибка загрузки программ: {e}")
+        result_programs = []
     
-    print(f"📬 Получены данные: uid={uid}, answers={answers}")
-    
-    # Получаем рекомендации
-    programs = recommend(answers, top_n=3)
-    
-    # Формируем ответ для Tilda
+    # Формируем ответ
     response_data = {
         "status": "success",
-        "programs": programs
+        "programs": result_programs,
+        "tag": selected_tag
     }
     
     # Отправляем результат пользователю в Telegram
-    if BOT_TOKEN != "YOUR_BOT_TOKEN_HERE" and uid.isdigit():
+    if BOT_TOKEN != "YOUR_BOT_TOKEN_HERE" and uid.isdigit() and result_programs:
         try:
             # Формируем сообщение
             message_lines = ["🎉 <b>Мы подобрали для тебя программы!</b>\n"]
             
-            for i, program in enumerate(programs, 1):
+            for i, program in enumerate(result_programs, 1):
                 message_lines.append(f"<b>{i}. {program['name']}</b>")
-                message_lines.append(f"{program['details'][:150]}...")
-                message_lines.append(f"🎬 <a href='{program['video_url']}'>Видео</a> | 🛒 <a href='{program['photo_url']}'>Заказать</a>\n")
+                message_lines.append(f"{program.get('details', '')[:100]}")
+                message_lines.append(f"🎬 <a href='{program.get('video_url', '#')}'>Видео</a> | 🛒 <a href='{program.get('photo_url', '#')}'>Заказать</a>\n")
             
             message_text = "\n".join(message_lines)
             await bot.send_message(chat_id=int(uid), text=message_text)

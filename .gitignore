@@ -5,22 +5,24 @@ __pycache__/
 *.so
 .Python
 venv/
+ENV/
 env/
 .venv/
 
-# Environment
-.env
-*.env.local
-
 # IDE
-.idea/
 .vscode/
+.idea/
 *.swp
 *.swo
-
-# OS
 .DS_Store
-Thumbs.db
 
-# Vercel
-.vercel/
+# Environment variables (NEVER commit!)
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+
+# Local testing
+ngrok.yml
